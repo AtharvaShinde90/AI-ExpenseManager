@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>💰 Expense Manager</h1>
+  <p>Track your spending. Make smarter decisions.</p>
+</header>
+
+<main>
+  <section class="cards">
+    <div class="card"><span>Total Spending</span><h2 id="total">₹0.00</h2></div>
+    <div class="card"><span>Transactions</span><h2 id="count">0</h2></div>
+    <div class="card"><span>Top Category</span><h2 id="top">—</h2></div>
+  </section>
+
+  <section class="panel">
+    <h2>Add an Expense</h2>
+    
+<div class="smart-entry">
+  <label for="smartInput">Describe your expense in a sentence</label>
+  <input
+    id="smartInput"
+    type="text"
+    placeholder="e.g. Spent ₹250 on lunch today"
+  >
+  <button type="button" id="parseButton">✨ Understand Expense</button>
+  <p id="parseMessage"></p>
+</div>
+
+    <form id="expenseForm">
+      <label>Description<input id="description" placeholder="e.g. Lunch" required></label>
+      <label>Amount (₹)<input id="amount" type="number" min="0.01" step="0.01" required></label>
+      <label>Date<input id="date" type="date" required></label>
+      <button type="submit">+ Add Expense</button>
+    </form>
+    <p id="message"></p>
+  </section>
+
+  <section class="panel">
+    <h2>Expense History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Description</th><th>Amount</th><th>Category</th><th>Date</th><th>Action</th></tr></thead>
+        <tbody id="expenses"></tbody>
+      </table>
+    </div>
+    <p id="empty">No expenses yet. Add your first expense!</p>
+  </section>
+
+  <section class="panel">
+    <h2>🤖 Smart Spending Insight</h2>
+    <p id="insight">Add expenses to receive a spending insight.</p>
+    <small>Categories and insights are generated using simple rules.</small>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
